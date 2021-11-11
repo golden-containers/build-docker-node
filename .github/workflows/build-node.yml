@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  schedule:
+    - cron: '0 15 * * *'
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-buildpack:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Checkout Node docker assets
+      run: ./checkout-docker-node.sh
+    - name: Build bullseye-slim
+      run: docker build --tag ghcr.io/golden-containers/node-bullseye-slim:17 docker-node/17/bullseye-slim
+    - name: Log in to registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+    - name: Publish the Docker image
+      run: docker push ghcr.io/golden-containers/node-bullseye-slim:17
