@@ -23,4 +23,4 @@ docker build --tag ghcr.io/golden-containers/node:17-bullseye-slim 17/bullseye-s
 
 # Push
 
-docker push ghcr.io/golden-containers/node:17-bullseye-slim
+docker push ghcr.io/golden-containers/node -a
