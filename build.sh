@@ -19,8 +19,8 @@ sed -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/bullseye-slim/; t" -e "1,
 
 # Build
 
-docker build --tag ghcr.io/golden-containers/node-bullseye-slim:17 17/bullseye-slim
+docker build --tag ghcr.io/golden-containers/node:17-bullseye-slim 17/bullseye-slim
 
 # Push
 
-docker push ghcr.io/golden-containers/node-bullseye-slim:17
+docker push ghcr.io/golden-containers/node:17-bullseye-slim
