@@ -14,8 +14,8 @@ cd docker-node
 
 # Transform
 
-sed -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/bullseye/; t" -e "1,// s//FROM ghcr.io\/golden-containers\/bullseye/" 17/bullseye/Dockerfile
-sed -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/bullseye-slim/; t" -e "1,// s//FROM ghcr.io\/golden-containers\/bullseye-slim/" 17/bullseye-slim/Dockerfile
+sed -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/debian\:bullseye/; t" -e "1,// s//FROM ghcr.io\/golden-containers\/debian\:bullseye/" 17/bullseye/Dockerfile
+sed -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/debian\:bullseye-slim/; t" -e "1,// s//FROM ghcr.io\/golden-containers\/debian\:bullseye-slim/" 17/bullseye-slim/Dockerfile
 
 # Build
 
