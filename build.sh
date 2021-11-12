@@ -23,7 +23,7 @@ ${GNU_SED} -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/debian\:bullseye-s
 
 # Build
 
-docker build 17/bullseye-slim/ --tag ghcr.io/golden-containers/node:17-bullseye-slim --label ${1:-DEBUG=TRUE}
+docker build 17/bullseye-slim/ --platform linux/amd64 --tag ghcr.io/golden-containers/node:17-bullseye-slim --label ${1:-DEBUG=TRUE}
 
 # Push
 
