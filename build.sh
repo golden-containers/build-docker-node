@@ -15,10 +15,10 @@ cd docker-node
 # Transform
 
 sed -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/debian\:bullseye/; t" -e "1,// s//FROM ghcr.io\/golden-containers\/debian\:bullseye/" 17/bullseye/Dockerfile
-echo "LABEL $1" >> 17/bullseye/Dockerfile
+echo "LABEL ${1:-DEBUG=TRUE}" >> 17/bullseye/Dockerfile
 
 sed -i -e "1 s/FROM.*/FROM ghcr.io\/golden-containers\/debian\:bullseye-slim/; t" -e "1,// s//FROM ghcr.io\/golden-containers\/debian\:bullseye-slim/" 17/bullseye-slim/Dockerfile
-echo "LABEL $1" >> 17/bullseye-slim/Dockerfile
+echo "LABEL ${1:-DEBUG=TRUE}" >> 17/bullseye-slim/Dockerfile
 
 # Build
 
